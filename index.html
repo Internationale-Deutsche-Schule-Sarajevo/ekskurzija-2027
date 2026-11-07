@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ekskurzija Beč – Bratislava 2027. | Glasanje roditelja | IDSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000; --red:#E8262C; --blue:#035EA1; --yellow:#FFCB29; --sky:#08ABE6;
+  --paper:#FFFFFF; --mist:#F1F7FB; --line:#D7E3EC; --muted:#4A5A66;
+  --display:"Poppins","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.55;color:var(--black);background:var(--paper)}
+h1,h2,h3,h4,h5{font-family:var(--display);line-height:1.2;margin:0}
+p{margin:0 0 .6em}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:none;margin-inline:0;padding-left:max(clamp(16px,3.5vw,64px),env(safe-area-inset-left));padding-right:max(clamp(16px,3.5vw,64px),env(safe-area-inset-right))}
+
+/* hero */
+.hero{background:var(--black);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+.school{display:flex;align-items:center;gap:12px;margin-bottom:28px;font-family:var(--display);font-weight:600;font-size:15px}
+.school i{display:inline-grid;grid-template-columns:repeat(3,10px);gap:3px}
+.school i b{width:10px;height:10px;border-radius:50%;display:block}
+.hero h1{font-size:clamp(34px,5.2vw,58px);font-weight:800;letter-spacing:-.01em}
+.hero .lead{font-size:19px;max-width:34em;margin-top:18px;color:#E9EEF2}
+.facts-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts-row span{border:2px solid var(--yellow);color:#fff;border-radius:999px;padding:6px 16px;font-size:15px;font-weight:600}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:380px;margin-inline:auto}
+.dot{aspect-ratio:1;border-radius:50%;background:var(--ag);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,38px);text-decoration:none;transition:transform .2s}
+.dot:hover{transform:scale(1.06)}
+.dot:nth-child(2),.dot:nth-child(4){border-radius:22%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:18px;font-size:14px;color:#D4DDE4}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.legend small{width:100%;text-align:center;font-size:13px;color:#AAB7C1}
+
+/* nav */
+.nav{background:var(--yellow);position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center;padding:10px 0}
+.nav a{color:#000;font-weight:700;font-family:var(--display);font-size:14.5px;text-decoration:none;padding:4px 2px;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:#000}
+.nav button{margin-left:auto;background:#000;color:#fff;border:0;border-radius:999px;padding:7px 18px;font:600 14px var(--display);cursor:pointer}
+
+section{padding:56px 0}
+section.alt{background:var(--mist)}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;margin-bottom:10px}
+.intro{max-width:46em;color:#1b2a35}
+
+/* how to read */
+.read{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.read div{border-top:5px solid var(--blue);padding-top:12px}
+.read div:nth-child(2){border-color:var(--yellow)}
+.read div:nth-child(3){border-color:var(--red)}
+.read h3{font-size:17px;margin-bottom:6px}
+.read p{font-size:15.5px;color:#22323d;margin:0}
+
+/* agencies */
+.agency{margin-top:44px}
+.agency-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.swatch{flex:none;width:18px;align-self:stretch;min-height:56px;background:var(--ag);border-radius:9px}
+.agency-head h3{font-size:24px}
+.agency-head p{margin:4px 0 0;color:var(--muted);font-size:15.5px;max-width:52em}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.opt{background:#fff;border:2px solid var(--line);border-top:8px solid var(--ag);border-radius:16px;padding:22px 22px 24px;scroll-margin-top:70px}
+.opt-head{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.badge{flex:none;width:44px;height:44px;border-radius:50%;background:var(--ag);color:var(--ink);display:grid;place-items:center;font:800 20px var(--display)}
+.opt-head h4{font-size:20px}
+.opt-head p{margin:0;color:var(--muted);font-size:15px}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--mist);border-radius:12px;padding:14px 16px}
+.price .lbl{display:block;font-size:13.5px;color:var(--muted);font-weight:600}
+.price .val{display:block;font:800 30px/1.1 var(--display);margin-top:2px}
+.price .val small{font-size:15px;font-weight:600}
+.price .sub{font-size:13.5px;color:var(--muted)}
+.price .alt{border-left:2px solid var(--line);padding-left:14px}
+.tot,.hb{font-size:15.5px;margin:10px 0 0}
+.facts{margin:16px 0 0}
+.facts div{padding:9px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr;gap:12px}
+.facts dt{font-weight:700;font-size:14.5px;font-family:var(--display)}
+.facts dd{margin:0;font-size:15.5px}
+.open{margin-top:16px;background:#FFF8DD;border-left:6px solid var(--yellow);border-radius:0 10px 10px 0;padding:12px 16px}
+.open h5{font-size:14.5px;margin-bottom:4px}
+.open ul{margin:0;padding-left:18px;font-size:15px}
+.foot-note{margin-top:26px;font-size:15px;color:#22323d;max-width:56em}
+
+/* table */
+.tbl-wrap{overflow-x:auto;margin-top:24px;border:2px solid var(--line);border-radius:14px;background:#fff}
+table{border-collapse:collapse;width:100%;min-width:980px;font-size:15px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--ag);color:var(--ink);font:700 14.5px/1.3 var(--display);border-bottom:0}
+thead th:first-child{background:#000;color:#fff}
+.tbadge{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.0);border:2px solid currentColor;margin-right:7px;font-size:13px}
+.tmode{font-weight:500}
+tbody th{font-weight:700;background:var(--mist);min-width:190px;position:sticky;left:0}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+
+/* form */
+.vote{background:#000;color:#fff}
+.vote h2{color:#fff}
+.vote .intro{color:#E3EAEF}
+form{margin-top:30px;display:grid;gap:30px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font:700 20px var(--display);padding:0;margin-bottom:6px}
+.hint{font-size:15px;color:#C9D4DC;margin:0 0 14px}
+.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.choice{display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice-body{display:flex;align-items:center;gap:14px;background:#fff;color:#000;border:3px solid #fff;border-radius:14px;padding:12px 16px;min-height:72px}
+.choice-text{display:flex;flex-direction:column;line-height:1.3}
+.choice-text span{font-size:14.5px;color:#334651}
+.choice input:checked + .choice-body{border-color:var(--yellow);box-shadow:0 0 0 4px var(--yellow)}
+.choice input:focus-visible + .choice-body{outline:3px solid var(--sky);outline-offset:4px}
+.choice.other .choice-body{background:#14202a;color:#fff;border-color:#3A4B58}
+.choice.other .choice-text span{color:#C9D4DC}
+.choice.other input:checked + .choice-body{border-color:var(--yellow)}
+.opts-inline{display:flex;flex-wrap:wrap;gap:10px}
+.chip{cursor:pointer}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:2px solid #fff;border-radius:999px;padding:8px 18px;font-weight:600;font-size:15.5px;background:transparent;color:#fff}
+.chip input:checked + span{background:var(--yellow);border-color:var(--yellow);color:#000}
+.chip input:focus-visible + span{outline:3px solid var(--sky);outline-offset:3px}
+.chip input:disabled + span{opacity:.45;cursor:not-allowed}
+.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:700;font-size:15.5px}
+.field input[type=text],.field textarea{font:inherit;font-size:17px;color:#000;background:#fff;border:3px solid #fff;border-radius:12px;padding:12px 14px;width:100%}
+.field textarea{min-height:150px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:3px solid var(--sky);outline-offset:2px;border-color:var(--sky)}
+.field .help{font-size:14px;color:#C9D4DC}
+.err{display:none;background:var(--red);color:#fff;border-radius:12px;padding:12px 16px;font-weight:600}
+.err.show{display:block}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{font:700 18px var(--display);border:0;border-radius:999px;padding:15px 34px;cursor:pointer;background:var(--red);color:#fff}
+.btn:hover{background:#C71E24}
+.btn.ghost{background:transparent;color:#fff;border:3px solid #fff;padding:12px 28px}
+.btn.ghost:hover{background:#fff;color:#000}
+.privacy{font-size:14px;color:#C9D4DC;max-width:44em}
+.sent{display:none;margin-top:34px;background:#fff;color:#000;border-radius:18px;padding:26px 28px;border-top:10px solid var(--yellow)}
+.sent.show{display:block}
+.sent h3{font-size:22px;margin-bottom:8px}
+.sent pre{white-space:pre-wrap;background:var(--mist);border-radius:12px;padding:16px;font:15.5px/1.5 var(--body);margin:14px 0;border:2px solid var(--line)}
+.sent .btn.ghost{color:#000;border-color:#000}
+.sent .btn.ghost:hover{background:#000;color:#fff}
+.sent .actions{margin-top:6px}
+
+footer{background:#fff;border-top:10px solid var(--blue);padding:34px 0 40px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 60px;justify-content:space-between}
+footer strong{font-family:var(--display)}
+.bar{display:flex;height:8px}
+.bar i{flex:1}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .mosaic{max-width:320px}
+  .opt-grid,.choices,.fields,.read{grid-template-columns:1fr}
+  .facts div{grid-template-columns:1fr;gap:2px}
+  .nav button{margin-left:0}
+}
+@media (max-width:520px){
+  body{font-size:16.5px}
+  .price{grid-template-columns:1fr}
+  .price .alt{border-left:0;padding-left:0;border-top:2px solid var(--line);padding-top:10px}
+  section{padding:40px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dot{transition:none}}
+@media print{
+  .nav,.actions,.sent,.hero .mosaic,.legend{display:none!important}
+  .hero{background:#fff;color:#000;padding:10px 0} .hero .lead{color:#000} .facts-row span{color:#000}
+  .vote{background:#fff;color:#000} .vote h2,.vote .intro,.hint,.field .help,.privacy{color:#000}
+  .opt{break-inside:avoid} section{padding:24px 0}
+  .choice-body{border:2px solid #000}
+}
+
+/* dodaci */
+:root{--riskbg:#FFF0F0}
+.notice{background:#fff;border:4px solid var(--red);border-radius:16px;padding:22px 26px;margin-top:8px}
+.notice h3{font-size:21px;margin-bottom:10px;color:#000}
+.notice ul{margin:0;padding-left:20px}
+.notice li{margin:6px 0}
+.key{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:20px;font-size:15px}
+.key span{display:inline-flex;align-items:center;gap:9px}
+.key i{display:inline-block;width:26px;height:16px;border-radius:5px}
+.key .k-red{border:3px solid var(--red);background:var(--riskbg)}
+.key .k-yel{border-left:6px solid var(--yellow);background:#FFF8DD}
+.shared{background:#fff;border:2px solid var(--line);border-left:10px solid var(--ag);border-radius:16px;padding:20px 22px;margin-bottom:22px}
+.shared h4{font-size:19px;margin-bottom:4px}
+.shared .sub{color:var(--muted);font-size:15px;margin:0 0 6px}
+.shared .facts{margin-top:8px}
+.facts .rk{border:3px solid var(--red);background:var(--riskbg);border-radius:10px;padding:9px 10px;margin:5px 0}
+.risk{margin-top:16px;border:3px solid var(--red);background:var(--riskbg);border-radius:12px;padding:12px 16px}
+.risk h5{font-size:14.5px;margin-bottom:4px;color:#A5171C}
+.risk ul{margin:0;padding-left:18px;font-size:15px}
+.risk li{margin:3px 0}
+.open.nav-na{background:#EEF3F7;border-left-color:var(--blue)}
+td.na,.facts .na{background:#EEF1F4}
+.facts .na{border-radius:10px;padding:9px 10px;margin:5px 0}
+.key .k-gry{background:#EEF1F4;border:2px dashed #9AA8B3}
+td.rk{outline:3px solid var(--red);outline-offset:-3px;background:var(--riskbg)}
+details{margin-top:16px;border:2px solid var(--line);border-radius:12px;background:#fff;padding:10px 16px}
+summary{cursor:pointer;font:700 15.5px var(--display)}
+details table{min-width:0;margin-top:10px;font-size:14.5px}
+details p{font-size:15px}
+.tbl-wrap.narrow table{min-width:760px}
+.warn{background:#fff;border:4px solid var(--red);border-radius:16px;padding:20px 24px;margin-top:22px}
+.warn strong.big{font:800 20px var(--display);display:block;margin-bottom:6px;color:#A5171C}
+.steps{counter-reset:s;display:grid;gap:14px;margin-top:24px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:#fff;border:2px solid var(--line);border-left:10px solid var(--blue);border-radius:14px;padding:16px 20px 16px 62px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font:800 16px var(--display)}
+.steps h3{font-size:18px;margin-bottom:4px}
+.steps p{margin:0;font-size:16px}
+.deadline{background:var(--yellow);color:#000;border-radius:14px;padding:14px 20px;font:700 18px var(--display);margin-top:20px;display:inline-block}
+.vote .deadline{margin:18px 0 0}
+@media (min-width:901px){.facts div{grid-template-columns:150px 1fr}}
+@media (max-width:900px){.shared{padding:16px}}
+@media print{.risk,.notice,.facts .rk{break-inside:avoid}}
+
+/* prilagodba prikaza: svi uređaji, platforme i preglednici */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;width:100%;min-height:100%}
+body{width:100%;min-height:100vh;min-height:100dvh;overflow-wrap:break-word;word-wrap:break-word;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+main,header,footer,section,nav{width:100%;display:block}
+img,svg,video{max-width:100%;height:auto}
+.opt,.shared,.notice,.warn,.steps li,.read>div,.agency,.hero .wrap>div{min-width:0}
+.tbl-wrap{-webkit-overflow-scrolling:touch;max-width:100%}
+.choice,.chip{position:relative}
+footer,.nav,.vote{padding-left:0;padding-right:0}
+footer a,.privacy,.intro{overflow-wrap:anywhere}
+button,.btn,input,textarea{-webkit-appearance:none;appearance:none}
+input[type=radio]{appearance:auto}
+.btn{text-align:center;text-decoration:none;display:inline-block;-webkit-tap-highlight-color:transparent}
+.field input[type=text],.field textarea{border-radius:12px}
+@media (min-width:901px){
+  .hero .wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr)}
+  .opt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .choices{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .read{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:1700px){
+  body{font-size:18px}
+  .hero .lead{font-size:20px}
+}
+@media (max-width:900px){
+  .nav .wrap{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:4px 18px}
+  .nav .wrap::-webkit-scrollbar{display:none}
+  .nav a,.nav button{flex:none;white-space:nowrap}
+  .nav a{padding:10px 4px}
+  .deadline{display:block}
+  .actions .btn{flex:1 1 auto}
+}
+@media (max-width:520px){
+  .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .hero{padding:36px 0 44px}
+  .facts-row span{font-size:14px;padding:5px 12px}
+  .opt{padding:18px 16px 20px}
+  .notice,.warn{padding:16px 16px}
+  .steps li{padding:14px 14px 14px 56px}
+  .steps li::before{left:12px}
+  .choice-body{padding:10px 12px}
+  .sent{padding:20px 18px}
+  .btn,.btn.ghost{width:100%}
+}
+@media (pointer:coarse){
+  .nav a,.nav button,.chip span,.btn{min-height:44px}
+  .nav a{display:inline-flex;align-items:center}
+  .chip span{display:inline-flex;align-items:center}
+}
+@media (hover:none){.dot:hover{transform:none}}
+@media (max-height:480px) and (orientation:landscape){
+  .hero{padding:28px 0 32px}
+  section{padding:32px 0}
+}
+.nav .wrap{padding-left:max(clamp(16px,3.5vw,64px),env(safe-area-inset-left));padding-right:max(clamp(16px,3.5vw,64px),env(safe-area-inset-right))}
+@media (max-width:520px){
+  .nav .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+}
+@media print{
+  .wrap,.nav .wrap{padding-left:0;padding-right:0}
+  .nav .wrap{overflow:visible}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="school"><i aria-hidden="true"><b style="background:#E8262C"></b><b style="background:#FFCB29"></b><b style="background:#08ABE6"></b><b style="background:#035EA1"></b><b style="background:#fff"></b><b style="background:#E8262C"></b></i>Međunarodna njemačka škola Sarajevo (IDSS)</div>
+      <h1>Ekskurzija Beč – Bratislava 2027.</h1>
+      <p class="lead">Škola je od tri agencije (Let’s Go, Centrotrans i Kompas) dobila ponude za ekskurziju učenika 9. razreda. Pročitajte svih šest ponuda, izaberite jednu koju podržavate i recite nam šta mislite.</p>
+      <div class="facts-row"><span>5.–9. april 2027.</span><span>4 noćenja u Beču</span><span>izlet u Bratislavu</span><span>8 učenika</span><span>Glasanje do srijede, 11.11.2026. u 16:00</span></div>
+    </div>
+    <div>
+      <div class="mosaic" role="navigation" aria-label="Skok na opciju"><a class="dot" href="#opcija-1" style="--ag:#FFCB29;--ink:#000000" aria-label="Opcija 1: Let’s Go, avion"><span>1</span></a><a class="dot" href="#opcija-2" style="--ag:#FFCB29;--ink:#000000" aria-label="Opcija 2: Let’s Go, autobus"><span>2</span></a><a class="dot" href="#opcija-3" style="--ag:#08ABE6;--ink:#000000" aria-label="Opcija 3: Centrotrans, avion"><span>3</span></a><a class="dot" href="#opcija-4" style="--ag:#08ABE6;--ink:#000000" aria-label="Opcija 4: Centrotrans, minibus"><span>4</span></a><a class="dot" href="#opcija-5" style="--ag:#035EA1;--ink:#FFFFFF" aria-label="Opcija 5: Kompas, avion"><span>5</span></a><a class="dot" href="#opcija-6" style="--ag:#035EA1;--ink:#FFFFFF" aria-label="Opcija 6: Kompas, autobus"><span>6</span></a></div>
+      <div class="legend"><span><i style="--c:#FFCB29"></i>Let’s Go</span><span><i style="--c:#08ABE6"></i>Centrotrans</span><span><i style="--c:#035EA1"></i>Kompas</span><small>Kliknite na broj da pređete na opciju.</small></div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sadržaj"><div class="wrap">
+  <a href="#vazno">Važno</a><a href="#opcije">Šest opcija</a><a href="#tabela">Poređenje u tabeli</a><a href="#broj-ucenika">Ako se broj učenika promijeni</a><a href="#slijedi">Šta slijedi</a><a href="#glasanje">Vaš glas</a>
+  <button type="button" onclick="window.print()">Odštampaj pregled</button>
+</div></nav>
+
+<main>
+<section id="vazno">
+  <div class="wrap">
+    <h2>Važno prije čitanja</h2>
+    <div class="notice">
+      <h3>Let’s Go nije dostavio odgovore na pitanja škole</h3>
+      <ul>
+        <li>Škola je agencijama postavila dodatna pitanja. <strong>Centrotrans i Kompas su odgovorili. Let’s Go nije dostavio odgovore, ni nakon više urgencija škole.</strong> Zato su kod Let’s Go mnoge stavke označene kao „nije navedeno“.</li>
+        <li>Prikazujemo samo ono što je jasno navedeno u ponudama i odgovorima agencija. Gdje podatak nije naveden, to je izričito napisano.</li>
+        <li>Podaci o hotelima označeni sa „prema javnim izvorima“ nisu iz ponuda.</li>
+        <li>Znak <strong>†</strong> kod Kompasa označava podatak iz odgovora Kompasa na pitanja škole, kojeg nema u samoj ponudi.</li>
+      </ul>
+    </div>
+    <div class="key"><span><i class="k-red"></i>Crveni okvir: stvarni rizik ili nelogičnost u ponudi</span><span><i class="k-gry"></i>Sivo: podatak nije naveden u ponudi</span><span><i class="k-yel"></i>Žuto: još nije potvrđeno</span></div>
+    <p class="intro" style="margin-top:22px">Škola ne daje preporuku ni ocjene. Prikazujemo ponude na isti način za sve opcije, kako biste Vi odlučili.</p>
+    <div class="read">
+      <div><h3>Cijena iz ponude</h3><p>Iznos po učeniku koji agencija navodi. <strong>Uključuje troškove dva nastavnika u pratnji.</strong> Kompas nije dao ukupnu cijenu aranžmana, pa je škola sabrala stavke iz njegove ponude (procjena škole).</p></div>
+      <div><h3>Uporediva cijena (procjena škole)</h3><p>Iznos po učeniku nakon što su dodani sadržaji koje ponuda ne pokriva: ulaznice za Schönbrunn i Hofburg kod Let’s Go (oko 82 KM) i karta javnog prijevoza u Beču kod Kompasa (oko 62 KM, po cijeni iz ponude Centrotransa).</p></div>
+      <div><h3>Šta nije u cijeni</h3><p>Poredimo ponude s <strong>doručkom</strong>. Ručak i večera plaćaju se iz džeparca (dodatnih troškova), kao i piće, suveniri, vožnje u Prateru i opcioni sadržaji. Moguće je da se naplati i osiguranje od otkaza putovanja (vidi ispod).</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="opcije" class="alt">
+  <div class="wrap">
+    <h2>Šest opcija</h2>
+    <p class="intro">Svaka agencija nudi prijevoz avionom ili kopnom (autobus ili minibus). Za svaku agenciju prvo su podaci koji važe za obje opcije, a zatim kartice opcija.</p>
+    <div class="agency" style="--ag:#FFCB29;--ink:#000000"><div class="agency-head"><span class="swatch" aria-hidden="true"></span><div><h3>Let’s Go Travel &amp; Events</h3><p>Ponuda bez datuma i priloga. Agencija nije dostavila odgovore na pitanja škole, ni nakon više urgencija.</p></div></div><div class="shared" style="--ag:#FFCB29;--ink:#000000"><h4>Let’s Go: zajedničko za obje opcije</h4><p class="sub">Zajednički podaci obje ponude. Agencija nije dostavila odgovore na pitanja škole.</p><dl class="facts"><div class="na"><dt>Hotel</dt><dd>Senator Hotel Vienna, 4 noćenja (naziv je iz ponude). Fotografija hotela u ponudi prikazuje oznaku s četiri zvjezdice (kategorija nije napisana u tekstu). Prema javnim izvorima, ne iz ponude: Hernalser Hauptstraße 105, 17. bečki okrug, tramvajska stanica kod hotela, centar oko 4–5 km. Raspored soba, odvojen smještaj učenika i učenica te jednokrevetne sobe za nastavnike nisu navedeni.</dd></div><div><dt>Obroci</dt><dd>Doručak (švedski stol nije izričito naveden). Oproštajna večera 4. dana uključena u cijenu.</dd></div><div><dt>Program</dt><dd>Ringstraße i centar Beča, Schönbrunn (vrtovi), Prater, Hofburg, MuseumsQuartier, Mariahilfer Straße, stari grad Bratislave. Nema Belvederea, muzeja 3. i 5. dana, Riesenrada ni Bratislavskog dvorca.</dd></div><div><dt>Vodiči</dt><dd>Licencirani vodič nije naveden (spominju se samo „organizirani obilasci“).</dd></div><div><dt>Ulaznice</dt><dd>Schönbrunn (30 €) i Hofburg/Sisi Museum (12 €) nisu u cijeni: ukupno 42 €, oko 82 KM po učeniku.</dd></div><div><dt>Javni prijevoz u Beču</dt><dd>Navedene „potrebne karte“; vrsta i cijena nisu navedene.</dd></div><div class="na"><dt>Osiguranje</dt><dd>Navedeno „putno zdravstveno osiguranje“; iznos pokrića nije naveden. Osiguranje od nezgode, prtljaga, odgovornosti organizatora i otkaza putovanja nije navedeno.</dd></div><div class="na"><dt>Plaćanje i otkazivanje</dt><dd>Nije navedeno.</dd></div><div class="na"><dt>Garancija cijene</dt><dd>Nije navedena; iznosi su „informativni i podložni promjenama“.</dd></div><div><dt>Broj putnika</dt><dd>Cijena izrađena za minimalno 8 učenika; cijena za manji broj nije data.</dd></div><div class="na"><dt>Ponuda važi</dt><dd>Rok nije naveden; ponuda nije datirana.</dd></div><div class="na"><dt>Kontakt tokom putovanja (24 h)</dt><dd>Nije naveden.</dd></div><div class="na"><dt>Dokumenti agencije</dt><dd>Licenca, police, opći uvjeti i reference nisu dostavljeni. Nije jasno koje je pravno lice koje bi sklapalo ugovor.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Nema licence organizatora, garancije putovanja, polica, općih uvjeta ni referenci (visok rizik).</li><li>Nema uvjeta plaćanja i otkazivanja, promjene putnika ni cijene za manji broj učenika (visok rizik).</li><li>Program je skraćen i bez licenciranog vodiča; nema kontakta dostupnog 24 sata (srednji rizik).</li><li>Razlika između aviona i autobusa je samo 100 KM po učeniku (800 KM za grupu). To je neobično malo, pa je moguće da cijene nisu realno izračunate (niži rizik).</li></ul></div></div><div class="opt-grid"><article class="opt" id="opcija-1" style="--ag:#FFCB29;--ink:#000000">
+<header class="opt-head"><span class="badge" aria-hidden="true">1</span><div><h4>Opcija 1: Avion</h4><p>Let’s Go, avion, direktan let</p></div></header>
+<div class="price"><div><span class="lbl">Cijena iz ponude</span><span class="val">2.499<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Uporediva cijena (procjena škole) *</span><span class="val">2.581<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>19.992 KM</strong> (iz ponude)</p>
+<dl class="facts"><div><dt>Prijevoz</dt><dd>Austrian Airlines, direktan let; brojevi letova nisu navedeni. Predani kofer 23 kg, ručni prtljag samo 40×30×20 cm (mala torba). Transfer aerodrom–hotel–aerodrom privatnim minibusom (doček na aerodromu nije izričito naveden); izlet u Bratislavu minibusom.</dd></div><div><dt>Polazak, 5. april</dt><dd>Let 06:10, slijetanje u Beč 07:20.</dd></div><div><dt>Povratak, 9. april</dt><dd>Let 12:50, slijetanje u Sarajevo 13:55. Taj let skraćuje program petog dana.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Brojevi letova nisu navedeni, a ručni prtljag je ograničen na malu torbu.</li></ul></div></article><article class="opt" id="opcija-2" style="--ag:#FFCB29;--ink:#000000">
+<header class="opt-head"><span class="badge" aria-hidden="true">2</span><div><h4>Opcija 2: Autobus</h4><p>Let’s Go, autobus, 57 sjedišta</p></div></header>
+<div class="price"><div><span class="lbl">Cijena iz ponude</span><span class="val">2.399<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Uporediva cijena (procjena škole) *</span><span class="val">2.481<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>19.192 KM</strong> (iz ponude)</p>
+<dl class="facts"><div class="rk"><dt>Prijevoz</dt><dd>Autobus MAN, 2014. godište (12 godina), 57 sjedišta; prijevoznik Pripo d.o.o. Konjic. Autobuski prijevoz Beč–Bratislava–Beč (vozilo nije posebno navedeno). Klima, pojasevi i tehnički pregled nisu navedeni.</dd></div><div class="na"><dt>Polazak, 5. april</dt><dd>Rano ujutro; dolazak u Beč poslijepodne (satnica i ruta nisu navedene).</dd></div><div class="rk"><dt>Povratak, 9. april</dt><dd>Dolazak u Sarajevo „u kasnim večernjim satima ili nakon ponoći“; tačna satnica i ruta nisu navedene.</dd></div><div class="na"><dt>Vozači i osiguranje prijevoznika</dt><dd>Broj vozača, tahograf, saobraćajna dozvola, tehnički pregled i osiguranje prijevoznika i putnika u autobusu nisu navedeni.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Autobus star 12 godina, a za 10 putnika je ponuđen autobus od 57 sjedišta (visok rizik).</li><li>Povratak u Sarajevo s maloljetnicima kasno uveče ili nakon ponoći, bez satnice i rute (visok rizik).</li></ul></div></article></div></div><div class="agency" style="--ag:#08ABE6;--ink:#000000"><div class="agency-head"><span class="swatch" aria-hidden="true"></span><div><h3>Centrotrans</h3><p>Centrotrans d.d. (Centrotours). Ponuda s dokumentacijom i odgovor na pitanja škole.</p></div></div><div class="shared" style="--ag:#08ABE6;--ink:#000000"><h4>Centrotrans: zajedničko za obje opcije</h4><p class="sub">Zajednički podaci obje ponude. Ponuda od 19.10.2026. s dokumentacijom (88 stranica); agencija je odgovorila na pitanja škole. Sve što je navedeno u odgovoru agencije izjava je agencije, koju treba potvrditi ugovorom.</p><dl class="facts"><div><dt>Hotel</dt><dd>Jedan od tri hotela, konačni izbor prije potpisa ugovora, najmanje 3*: Exe Vienna 4* (oko 30 minuta do centra), ibis Wien Mariahilf 3* (8–10 minuta metroom) ili MEININGER Downtown Franz 3* (10–15 minuta; hibrid hotel/hostel). Svi su blizu metroa ili tramvaja. U slučaju popunjenosti hotela smještaj se osigurava u hotelu iste (slične) ili više kategorije. Agencija se u odgovoru obavezala izabrati jedan hotel prije ugovora.</dd></div><div><dt>Sobe</dt><dd>Učenici prvenstveno u dvokrevetnim sobama, uz mogućnost višekrevetnih (1/2 ili 1/4); nastavnici u jednokrevetnim. U odgovoru agencija navodi da će voditi računa o odvojenom smještaju učenika i učenica te o blizini soba nastavnika.</dd></div><div><dt>Obroci</dt><dd>4 doručka. Oproštajna večera je u programu 4. dana; u prvobitnom popisu uključenih usluga nije izričito navedena, a odgovor agencije je navodi kao uključenu.</dd></div><div><dt>Program</dt><dd>Ringstraße, Schönbrunn, Prater i Riesenrad, Hofburg/Sisi, Belvedere, Naturhistorisches Museum, Naschmarkt, Karlskirche, Bratislava (grad i dvorac). Bez Haus der Musik.</dd></div><div><dt>Vodiči</dt><dd>Licencirani lokalni vodič 3. dana (Beč) i 4. dana (Bratislava). Prvi dan bez licenciranog vodiča osim uz doplatu.</dd></div><div><dt>Ulaznice</dt><dd>U cijeni, uključujući ulaznice za nastavnike (odgovor agencije). Tarife su u ponudi navedene kao „orijentacijske“, a školske tarife i rezervacije tek se potvrđuju.</dd></div><div><dt>Javni prijevoz u Beču</dt><dd>7-dnevna digitalna karta, 25,20 € po osobi; cijena se potvrđuje za 2027. Ponuda računa 11 osoba (8 učenika, 2 profesora i 1 vodič), ukupno 277,20 €. Prema odgovoru agencije, uključena u cijenu.</dd></div><div><dt>Transferi i izlet u Bratislavu</dt><dd>U prvobitnoj ponudi transferi (2 × 270 €) i najam autobusa (1.000 €) bili su navedeni s iznosima, bez izričite tvrdnje da su uključeni. U odgovoru agencija navodi da su svi transferi i najam vozila za Bratislavu uključeni u cijenu.</dd></div><div class="rk"><dt>Osiguranje</dt><dd>Obaveza osiguranja od najmanje 30.000 € po osobi. Priložena polica od nezgode važi do 01.04.2027. (smrt od nezgode 30.000 KM, trajni invaliditet 60.000 KM, troškovi liječenja 4.000 KM); agencija obećava produženu policu (do 01.04.2028.). Važeće police garancije putovanja, zdravstvenog osiguranja, prtljaga i odgovornosti prijevoznika agencija obećava dostaviti prije putovanja.</dd></div><div class="rk"><dt>Osiguranje od otkaza putovanja</dt><dd>Agencija navodi da se plaća prije putovanja i da je cijena dostavljena posebno. Iznos nije poznat u trenutku izrade ovog pregleda i nije uračunat u cijenu.</dd></div><div><dt>ETIAS i takse</dt><dd>Takse i naknade navedene u ponudi su u cijeni. Ako ETIAS bude u primjeni na dan putovanja, agencija navodi da podnosi zahtjeve i snosi naknade.</dd></div><div><dt>Cijena i broj putnika</dt><dd>Cijena je s PDV-om i garantirana za 10 učesnika (8 učenika i 2 nastavnika). Za 7 ili 6 učenika cijena se mijenja.</dd></div><div><dt>Plaćanje</dt><dd>Najviše 6 rata; ukupan iznos uplaćen najkasnije 15 dana prije polaska. Konačan raspored uplata bit će u ugovoru. Prvobitna ponuda navodila je 30% (45 dana), 50% (30 dana) i 100% (15 dana) prije polaska, što nije usklađeno.</dd></div><div><dt>Otkazivanje</dt><dd>Besplatno do 90 dana prije polaska (avion), odnosno 60 dana (minibus). Poslije toga troškovi zavise od vremena otkazivanja i uvjeta dobavljača. Promjena imena putnika prema pravilima aviokompanije, hotela i drugih pružalaca usluga. Tačni uvjeti bit će u ugovoru.</dd></div><div><dt>Ponuda važi</dt><dd>Do 30.11.2026.</dd></div><div><dt>Kontakt tokom putovanja (24 h)</dt><dd>Emir Ljukovac, operativni menadžer, 061 216 375.</dd></div><div><dt>Dokumenti agencije</dt><dd>Dostavljeni: licenca organizatora putovanja (Kanton Sarajevo, 2024.), licence prijevoznika, UTA BiH, IATA, reference i ugovori. Referentna lista ima 18 ustanova (dvije osnovne škole, srednje škole, medresa, fakulteti, Univerzitet i Institut); među ugovorima je putovanje Beč–Bratislava samo za uposlenike (januar 2026.).</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Polica od nezgode ističe 01.04.2027., četiri dana prije polaska, a izdata je za „osobe prema promjenjivom spisku“ (grupa 611, gradski saobraćaj). Produžena polica je obećana, nije dostavljena (visok rizik).</li><li>Polica odgovornosti iz djelatnosti ima limit 25.000 KM, učešće 10% (najmanje 500 KM) i mjesto osiguranja Kurta Schorka 14 u Sarajevu; ne pokriva čisto imovinske štete, ekološke štete ni štete na tuđim stvarima (visok rizik).</li><li>Garancija putovanja: licenca je vezana za policu jemčevine koja se obnavlja 16.09.; priložena polica od 16.09.2026. je „odgovornost iz djelatnosti“ i ne dokazuje jemčevinu. Agencija obećava važeće police prije putovanja (visok rizik).</li><li>U ponudi stoji da su cijene ulaznica „budžetska procjena“ podložna promjenama do aprila 2027., a u odgovoru da je cijena garantirana. Ta dva navoda se ne slažu (srednji rizik).</li><li>Pregled „Cijena ne obuhvata“ i dalje ne sadrži nijednu stvarnu stavku; drugi dan programa pogrešno je označen kao „petak“ (06.04.2027. je utorak); agencija je obećala ispravku.</li><li>Ponuda na više mjesta računa i jednog vodiča agencije (karta javnog prijevoza za 11 osoba, ulaznice za 1 vodiča), ali se vodič ili pratilac agencije ne spominje u opisu usluge.</li><li>Hotel još nije određen; cijena osiguranja od otkaza nije poznata (srednji rizik).</li></ul></div></div><div class="opt-grid"><article class="opt" id="opcija-3" style="--ag:#08ABE6;--ink:#000000">
+<header class="opt-head"><span class="badge" aria-hidden="true">3</span><div><h4>Opcija 3: Avion</h4><p>Centrotrans, avion, direktan let</p></div></header>
+<div class="price"><div><span class="lbl">Cijena iz ponude</span><span class="val">2.999<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Uporediva cijena (procjena škole) *</span><span class="val">2.999<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>23.992 KM</strong> (iz ponude)</p>
+<dl class="facts"><div><dt>Prijevoz</dt><dd>Austrian Airlines, direktan let (OS 732 / OS 731). Cijena karte 1.016 KM po osobi „sa svim osiguranjima koji su navedeni u tenderu“. Predani prtljag do 23 kg, ručni do 8 kg. Transfer autobusom s 20 sjedišta i najam autobusa za Bratislavu (vidi zajedničke podatke).</dd></div><div><dt>Polazak, 5. april</dt><dd>Okupljanje 04:15; let 06:10, slijetanje u Beč 07:20.</dd></div><div><dt>Povratak, 9. april</dt><dd>Let 22:15, slijetanje u Sarajevo 23:20. Agencija će provjeriti raniji let, ali ishod nije poznat.</dd></div><div><dt>Program, 5. dan</dt><dd>Technisches Museum.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Povratni let slijeće u 23:20 s maloljetnicima, a program petog dana traje do odlaska na aerodrom za let u 22:15 (srednji rizik).</li></ul></div></article><article class="opt" id="opcija-4" style="--ag:#08ABE6;--ink:#000000">
+<header class="opt-head"><span class="badge" aria-hidden="true">4</span><div><h4>Opcija 4: Minibus</h4><p>Centrotrans, minibus, 20 sjedišta</p></div></header>
+<div class="price"><div><span class="lbl">Cijena iz ponude</span><span class="val">1.799<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Uporediva cijena (procjena škole) *</span><span class="val">1.799<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>14.392 KM</strong> (iz ponude)</p>
+<dl class="facts"><div><dt>Prijevoz</dt><dd>Minibus Mercedes Sprinter 519 CDI, 2025., Euro 6, 20 sjedišta; vozilo Centrotransa. Potvrda o registraciji (priložena) važi do 28.08.2027. Ruta: Zagreb–Maribor–Graz. Isti minibus za izlet u Bratislavu. Prtljag nije naveden.</dd></div><div><dt>Polazak, 5. april</dt><dd>Okupljanje 06:00, polazak 06:30; dolazak u Beč planiran do 17:00, bez vremenske rezerve.</dd></div><div><dt>Povratak, 9. april</dt><dd>Polazak oko 14:30; dolazak u Sarajevo planiran do 00:00, bez vremenske rezerve.</dd></div><div><dt>Vozači i kontrola vožnje</dt><dd>Broj vozača, kontrola vremena vožnje i odmora, plan za kašnjenje i zamjensko vozilo: agencija obećava dostaviti prije putovanja.</dd></div><div><dt>Program, 5. dan</dt><dd>Hundertwasserhaus umjesto muzeja. Prvi dan dolazak poslijepodne; peti dan povratak oko 14:30.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Duga vožnja Sarajevo–Beč i nazad bez vremenske rezerve; broj vozača nije naveden (srednji rizik).</li><li>Agencija u odgovoru piše o „turističkom autobusu najnovije generacije“, a ponuđen je minibus od 20 sjedišta.</li></ul></div></article></div></div><div class="agency" style="--ag:#035EA1;--ink:#FFFFFF"><div class="agency-head"><span class="swatch" aria-hidden="true"></span><div><h3>Kompas</h3><p>Cjenik po stavkama bez ukupne cijene. Cijena je obračun škole iz stavki ponude i odgovora agencije.</p></div></div><div class="shared" style="--ag:#035EA1;--ink:#FFFFFF"><h4>Kompas: zajedničko za obje opcije</h4><p class="sub">Zajednički podaci obje ponude. Ponuda i odgovor na pitanja škole od 02.11.2026. Kompas nije dostavio ukupnu cijenu aranžmana, već cjenik po stavkama; cijenu je obračunala škola (vidi ispod).</p><dl class="facts"><div class="na"><dt>Hotel</dt><dd>Jamela Jardin Vienna 4*, Hintschiggasse 1, 1100 Beč. Prema javnim izvorima, ne iz ponude: hotel se otvara u decembru 2026. (ranije Arion Cityhotel Vienna), centar je oko 6 km. Najbliža stanica metroa Troststraße (U1) udaljena je oko 2 km (autobus 65A/16A 5–7 minuta); do Reumannplatza (U1) autobusom 65A oko 9 minuta. Vrijeme do centra i rezervni hotel nisu navedeni.</dd></div><div><dt>Sobe</dt><dd>Cijene u ponudi: dvokrevetna 57 €, višekrevetna 50 €, jednokrevetna 96 € po osobi i noći; ponuda navodi da su za učenike moguće i trokrevetne i četverokrevetne sobe. Prema odgovoru Kompasa† učenici su u dvokrevetnim sobama, dječaci i djevojčice odvojeno. Nastavnici su u jednokrevetnim (blizina soba nije potvrđena).</dd></div><div><dt>Obroci</dt><dd>Doručak (švedski stol); boravišna taksa uključena. Oproštajna večera 35 € po osobi (meni od 3 slijeda), obračunata u cijeni.</dd></div><div><dt>Program</dt><dd>Svi sadržaji iz zahtjeva škole navedeni s cijenama. Dnevni program sa satnicom tek nakon potvrde; ulaznice se najavljuju uz spisak učenika i datume rođenja.</dd></div><div><dt>Vodiči</dt><dd>Lokalni vodiči za Beč (250 € do 3 sata, 500 € do 6 sati) i Bratislavu (250 € za 2,5 sata) su u ponudi; da su licencirani navodi odgovor Kompasa†. U obračunu škole: Beč pola dana + Bratislava.</dd></div><div><dt>Ulaznice</dt><dd>U ponudi, cijene po osobi (npr. Schönbrunn učenici 22 €, odrasli 40 €); prema odgovoru Kompasa† učeničke cijene važe do 18 godina. Nisu uračunati: vrtovi Schönbrunna i Gloriette (12 € učenik, 17 € odrasli) te izborne stavke (Graben toranj 10 €, vidikovac na mostu u Bratislavi 11 €, povijesni muzej u Bratislavskom dvorcu 9 €).</dd></div><div><dt>Javni prijevoz u Beču</dt><dd>Nije u ponudi: karta se kupuje na licu mjesta ili u aplikaciji, a Kompas navodi da je ne može obezbijediti bez dodatne naknade. U „uporedivu cijenu“ škola je dodala procjenu od 25,20 € po osobi.</dd></div><div class="rk"><dt>Osiguranje</dt><dd>Ponuda: paket putničkog zdravstvenog osiguranja Triglav bit će dostavljen naknadno. Prema odgovoru Kompasa† cijena je 10 KM po osobi, osigurana suma 30.000 €; polica i obuhvat nisu dostavljeni. Osiguranje od nezgode, prtljaga i otkaza putovanja nije ponuđeno.</dd></div><div><dt>Plaćanje</dt><dd>50% avans po potvrdi, ostatak 30 dana prije polaska.</dd></div><div class="rk"><dt>Otkazivanje avionskih karata i hotela</dt><dd>Avio karte su nepovratne i ime putnika se ne može mijenjati; ako jedan učenik odustane, gubi se karta (800 KM). Hotel: promjena imena moguća, besplatan storno sobe do 7 dana prije dolaska; poslije toga uvjeti nisu navedeni.</dd></div><div class="rk"><dt>Garancija cijene</dt><dd>Ponuda: cijene avio karata su „trenutne iz sistema“ i podložne promjenama; prema odgovoru Kompasa† garancija je samo 24 sata. Ulaznice po objavljenim tarifama.</dd></div><div><dt>Broj putnika</dt><dd>Minimum 8 putnika; pri manjem broju cijena se mijenja, ali cijene za 7 i 6 učenika nisu date.</dd></div><div class="rk"><dt>Ponuda važi</dt><dd>Opcija ponude do 15.11.2026.; produženje do 30.11.2026. nije potvrđeno. Ponuda je datirana 02.11.2026., poslije roka za dostavu (20.10.2026.).</dd></div><div><dt>Kontakt tokom putovanja (24 h)</dt><dd>Ponuda: Emergency call 24 h. Prema odgovoru Kompasa† kontakt osoba je Sandra Buzuk, +387 61 487 381. Pratilac agencije nije uračunat.</dd></div><div class="na"><dt>Dokumenti agencije</dt><dd>Licenca „naknadno“; ništa nije priloženo. Garancija putovanja, osiguranje odgovornosti organizatora, opći uvjeti i reference nisu navedeni.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Nema ukupne cijene aranžmana; ponuda je cjenik po stavkama, a cijene avio karata su „trenutne iz sistema“ i podložne promjenama (visok rizik).</li><li>Licenca, police, garancija putovanja i osiguranje odgovornosti organizatora nisu dostavljeni ni navedeni; nije ponuđeno osiguranje od nezgode, prtljaga i otkaza (visok rizik).</li><li>Avio karte su nepovratne; odustajanje jednog učenika znači gubitak karte od 800 KM (visok rizik).</li><li>Hotel je tek otvoren (prema javnim izvorima), pa nema iskustava gostiju do aprila 2027.; rezervni hotel nije naveden (srednji rizik).</li><li>Ponuda je datirana poslije roka za dostavu, a „opcija ponude“ važi samo do 15.11.2026. (srednji rizik).</li><li>Obračun škole počiva na pretpostavkama koje Kompas nije potvrdio: 2 smjera za transfer, 2 pravca za izlet u Bratislavu, vodič u Beču pola dana, bez vrtova i Gloriettea, povratni let 12:15 (druge ponude navode 12:50) (srednji rizik).</li></ul></div></div><div class="opt-grid"><article class="opt" id="opcija-5" style="--ag:#035EA1;--ink:#FFFFFF">
+<header class="opt-head"><span class="badge" aria-hidden="true">5</span><div><h4>Opcija 5: Avion</h4><p>Kompas, avion, direktan let</p></div></header>
+<div class="price"><div><span class="lbl">Obračun škole iz stavki Kompasa</span><span class="val">2.211<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Obračun + procjena karte javnog prijevoza *</span><span class="val">2.272<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>17.685 KM</strong> (obračun škole, ne ponuda)</p>
+<dl class="facts"><div><dt>Prijevoz</dt><dd>Austrian Airlines, direktan let (OS 730 / OS 729). Predani prtljag 20 kg, ručni 8 kg; takse uključene u cijenu karte. Karta: 800 KM po osobi; prema ponudi, karte za dva nastavnika uključene su u cijenu karata učenika (8 × 800 KM = 6.400 KM). Prema odgovoru Kompasa† puna cijena karte je 640 KM po osobi.</dd></div><div><dt>Polazak, 5. april</dt><dd>Let 06:10, slijetanje u Beč 07:20.</dd></div><div><dt>Povratak, 9. april</dt><dd>Let 22:15, slijetanje u Sarajevo 23:20, ili let u 12:15 po istoj cijeni.</dd></div><div><dt>Transfer i izlet</dt><dd>Transfer aerodrom–hotel–aerodrom autobusom s 19 mjesta (620 KM po smjeru, u obračunu 2 smjera = 1.240 KM). Izlet u Bratislavu autobusom (530 € po pravcu, u obračunu 2 pravca).</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Cijena nije paket nego obračun iz stavki; cijene avio karata su „trenutne iz sistema“ i podložne promjenama.</li></ul></div></article><article class="opt" id="opcija-6" style="--ag:#035EA1;--ink:#FFFFFF">
+<header class="opt-head"><span class="badge" aria-hidden="true">6</span><div><h4>Opcija 6: Autobus</h4><p>Kompas, autobus, 19 mjesta</p></div></header>
+<div class="price"><div><span class="lbl">Obračun škole iz stavki Kompasa</span><span class="val">1.688<small> KM</small></span><span class="sub">po učeniku</span></div>
+<div class="alt"><span class="lbl">Obračun + procjena karte javnog prijevoza *</span><span class="val">1.750<small> KM</small></span><span class="sub">po učeniku</span></div></div>
+<p class="tot">Ukupno za 8 učenika: <strong>13.507 KM</strong> (obračun škole, ne ponuda)</p>
+<dl class="facts"><div><dt>Prijevoz</dt><dd>Autobus Otokar, 2024., 19 mjesta; prijevoznik Vildan tours; dva vozača. Ponuda: autobus „prema navedenom programu“ 4.620 KM, a smještaj dva vozača (dvokrevetna soba, doručak i večera) treba dodati. Prema odgovoru Kompasa† smještaj vozača je 915 KM (ukupno 5.535 KM), a izlet u Bratislavu je uključen.</dd></div><div class="na"><dt>Polazak, 5. april</dt><dd>Ruta i satnica nisu navedeni.</dd></div><div class="na"><dt>Povratak, 9. april</dt><dd>Ruta i satnica nisu navedeni.</dd></div><div class="rk"><dt>Dokumenti prijevoznika</dt><dd>Osiguranje putnika obezbjeđuje autobuska kompanija; prtljag će kompanija naknadno provjeriti. Prema odgovoru Kompasa† licenca, saobraćajna dozvola, tehnički pregled i police prijevoznika dostavljaju se tek nakon potvrde škole.</dd></div><div class="na"><dt>Otkazivanje autobusa</dt><dd>Uvjeti nisu navedeni.</dd></div></dl><div class="risk"><h5>Rizici i nelogičnosti</h5><ul><li>Autobus bez rute i satnice, a dokumenti prijevoznika tek nakon potvrde škole† (visok rizik).</li><li>Uvjeti otkazivanja autobusa nisu navedeni.</li></ul></div></article></div><details><summary>Kako je škola obračunala cijenu Kompasa (opcije 5 i 6)</summary>
+<p>Kompas je dostavio cjenik po stavkama. Škola je stavke sabrala za 8 učenika i 2 nastavnika, uz pretpostavke navedene iznad. Ovo je procjena škole, ne ponuda Kompasa.</p>
+<div class="tbl-wrap narrow"><table>
+<thead><tr><th style="background:#000;color:#fff">Stavka</th><th style="--ag:#035EA1;--ink:#fff">Opcija 5, avion</th><th style="--ag:#035EA1;--ink:#fff">Opcija 6, autobus</th></tr></thead><tbody>
+<tr><th scope="row">Smještaj učenika (8 × 57 € × 4 noći)</th><td>1.824 €</td><td>1.824 €</td></tr>
+<tr><th scope="row">Smještaj nastavnika (2 × 96 € × 4 noći)</th><td>768 €</td><td>768 €</td></tr>
+<tr><th scope="row">Smještaj vozača (915 KM †)</th><td>–</td><td>467,83 €</td></tr>
+<tr><th scope="row">Ulaznice (8 učenika i 2 nastavnika)</th><td>583 €</td><td>583 €</td></tr>
+<tr><th scope="row">Oproštajna večera (10 × 35 €)</th><td>350 €</td><td>350 €</td></tr>
+<tr><th scope="row">Lokalni vodiči (Beč pola dana + Bratislava)</th><td>500 €</td><td>500 €</td></tr>
+<tr><th scope="row">Prijevoz Beč–Bratislava (2 × 530 €)</th><td>1.060 €</td><td>uključen u autobus</td></tr>
+<tr><th scope="row">Zbir stavki u €</th><td>5.085 €</td><td>4.492,83 €</td></tr>
+<tr><th scope="row">Avio karte (8 × 800 KM; karte nastavnika uključene) / autobus</th><td>6.400 KM</td><td>4.620 KM</td></tr>
+<tr><th scope="row">Transfer aerodrom–hotel–aerodrom (2 × 620 KM)</th><td>1.240 KM</td><td>–</td></tr>
+<tr><th scope="row">Zdravstveno osiguranje Triglav (10 × 10 KM †)</th><td>100 KM</td><td>100 KM</td></tr>
+<tr><th scope="row">UKUPNO iz ponude (u KM)</th><td><strong>17.685 KM</strong></td><td><strong>13.507 KM</strong></td></tr>
+<tr><th scope="row">Po učeniku iz ponude</th><td>2.211 KM</td><td>1.688 KM</td></tr>
+<tr><th scope="row">Procjena škole: karta javnog prijevoza (10 × 25,20 €), po učeniku</th><td>+62 KM</td><td>+62 KM</td></tr>
+<tr><th scope="row">Uporediva cijena po učeniku</th><td><strong>2.272 KM</strong></td><td><strong>1.750 KM</strong></td></tr>
+</tbody></table></div>
+<p>Nisu uračunati: pratilac agencije, vrtovi i Gloriette (12 € / 17 €), osiguranje od nezgode, prtljaga i otkaza (nisu ponuđeni). Stvarna cijena može biti viša. † = podatak iz odgovora Kompasa na pitanja škole, kojeg nema u samoj ponudi.</p>
+<p><strong>Ulaznice u obračunu (cijene iz ponude Kompasa):</strong> Schönbrunn 22 € učenik / 40 € odrasli; Prater, Wiener Riesenrad 8 € / 16,50 €; Hofburg i Sisi Museum 12 € / 22 €; Gornji Belvedere učenici besplatno / 25 €; Naturhistorisches Museum učenici besplatno / 20 €; Hundertwasserhaus besplatno. Ukupno 583 €.</p>
+</details></div>
+    <p class="foot-note">* Uporediva cijena: kurs 1 € = 1,95583 KM. Ulaznice za Schönbrunn i Hofburg (42 € po učeniku) dodane su cijeni Let’s Go; ulaznice za nastavnike nisu dodane jer ponuda navodi samo cijenu po učeniku. Karta javnog prijevoza (25,20 € po osobi) dodana je cijeni Kompasa, a cijenama Centrotransa nije dodano ništa jer agencija navodi da je sve uključeno (izjava agencije, koju treba potvrditi ugovorom). Iznosi se mogu promijeniti kad agencije dostave konačne ponude.</p>
+    <div class="open" style="margin-top:20px"><h5>Osiguranje od otkaza putovanja</h5><ul><li>Let’s Go i Kompas ga nisu ponudili.</li><li>Centrotrans navodi da ga putnici moraju platiti prije putovanja; iznos nije poznat u trenutku izrade ovog pregleda i nije uračunat u cijenu.</li></ul></div>
+  </div>
+</section>
+
+<section id="tabela">
+  <div class="wrap">
+    <h2>Poređenje u tabeli</h2>
+    <p class="intro">Najvažniji podaci svih šest opcija na jednom mjestu. Crveni okvir označava rizik ili nelogičnost, a sivo podatak koji nije naveden u ponudi. Na telefonu tabelu možete pomjerati udesno.</p>
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="Tabela poređenja ponuda">
+      <table><thead><tr><th scope="col">Stavka</th><th scope="col" style="--ag:#FFCB29;--ink:#000000"><span class="tbadge">1</span>Let’s Go<br><span class="tmode">Avion</span></th><th scope="col" style="--ag:#FFCB29;--ink:#000000"><span class="tbadge">2</span>Let’s Go<br><span class="tmode">Autobus</span></th><th scope="col" style="--ag:#08ABE6;--ink:#000000"><span class="tbadge">3</span>Centrotrans<br><span class="tmode">Avion</span></th><th scope="col" style="--ag:#08ABE6;--ink:#000000"><span class="tbadge">4</span>Centrotrans<br><span class="tmode">Minibus</span></th><th scope="col" style="--ag:#035EA1;--ink:#FFFFFF"><span class="tbadge">5</span>Kompas<br><span class="tmode">Avion</span></th><th scope="col" style="--ag:#035EA1;--ink:#FFFFFF"><span class="tbadge">6</span>Kompas<br><span class="tmode">Autobus</span></th></tr></thead><tbody><tr><th scope="row">Cijena iz ponude, po učeniku (Kompas: obračun škole)</th><td>2.499 KM</td><td>2.399 KM</td><td>2.999 KM</td><td>1.799 KM</td><td>2.211 KM (obračun škole)</td><td>1.688 KM (obračun škole)</td></tr><tr><th scope="row">Uporediva cijena, po učeniku *</th><td>2.581 KM</td><td>2.481 KM</td><td>2.999 KM</td><td>1.799 KM</td><td>2.272 KM</td><td>1.750 KM</td></tr><tr><th scope="row">Ukupno za 8 učenika (iz ponude)</th><td>19.992 KM</td><td>19.192 KM</td><td>23.992 KM</td><td>14.392 KM</td><td>17.685 KM (obračun)</td><td>13.507 KM (obračun)</td></tr><tr><th scope="row">Prijevoz</th><td>Avion, direktan</td><td>Autobus MAN 2014., 57 sjedišta</td><td>Avion, direktan</td><td>Minibus Sprinter 2025., 20 sjedišta</td><td>Avion, direktan</td><td>Autobus Otokar 2024., 19 mjesta</td></tr><tr><th scope="row">Dolazak u Beč, 5. april</th><td>07:20 (let)</td><td class="na">Poslijepodne, satnica nije navedena</td><td>07:20 (let)</td><td>Do 17:00, bez rezerve</td><td>07:20 (let)</td><td class="na">Nije navedeno</td></tr><tr><th scope="row">Povratak u Sarajevo, 9. april</th><td>13:55 (let)</td><td class="rk">Kasno uveče ili nakon ponoći</td><td>23:20 (let)</td><td class="rk">Do 00:00, bez rezerve</td><td>23:20 ili raniji let u 12:15</td><td class="na">Nije navedeno</td></tr><tr><th scope="row">Hotel</th><td class="na">Senator Vienna (fotografija u ponudi: 4 zvjezdice); raspored soba nije naveden</td><td class="na">Senator Vienna (fotografija u ponudi: 4 zvjezdice); raspored soba nije naveden</td><td>Jedan od tri (3* ili 4*), još nije određen</td><td>Jedan od tri (3* ili 4*), još nije određen</td><td>Jamela Jardin 4*, otvaranje decembra 2026. (javni izvori)</td><td>Jamela Jardin 4*, otvaranje decembra 2026. (javni izvori)</td></tr><tr><th scope="row">Licencirani vodiči</th><td class="na">Nije navedeno</td><td class="na">Nije navedeno</td><td>U ponudi</td><td>U ponudi</td><td>Lokalni vodiči u ponudi (licencirani †)</td><td>Lokalni vodiči u ponudi (licencirani †)</td></tr><tr><th scope="row">Ulaznice u cijeni</th><td>Ne (Schönbrunn, Hofburg)</td><td>Ne (Schönbrunn, Hofburg)</td><td>Da, tarife orijentacijske</td><td>Da, tarife orijentacijske</td><td>Da</td><td>Da</td></tr><tr><th scope="row">Javni prijevoz u Beču</th><td class="na">Vrsta i cijena nisu navedene</td><td class="na">Vrsta i cijena nisu navedene</td><td>7-dnevna karta, 25,20 €</td><td>7-dnevna karta, 25,20 €</td><td class="na">Nije u ponudi</td><td class="na">Nije u ponudi</td></tr><tr><th scope="row">Zdravstveno osiguranje</th><td class="na">Iznos nije naveden</td><td class="na">Iznos nije naveden</td><td>Min. 30.000 €, polica prije polaska</td><td>Min. 30.000 €, polica prije polaska</td><td>Triglav, paket naknadno (10 KM, 30.000 € †)</td><td>Triglav, paket naknadno (10 KM, 30.000 € †)</td></tr><tr><th scope="row">Osiguranje od nezgode i prtljaga</th><td class="na">Nije navedeno</td><td class="na">Nije navedeno</td><td class="rk">Polica nezgode ističe 01.04.2027.</td><td class="rk">Polica nezgode ističe 01.04.2027.</td><td class="rk">Nije ponuđeno</td><td class="rk">Nije ponuđeno</td></tr><tr><th scope="row">Osiguranje od otkaza putovanja</th><td class="na">Nije ponuđeno</td><td class="na">Nije ponuđeno</td><td class="rk">Plaća se prije putovanja, iznos nepoznat</td><td class="rk">Plaća se prije putovanja, iznos nepoznat</td><td class="na">Nije ponuđeno</td><td class="na">Nije ponuđeno</td></tr><tr><th scope="row">Dokumentacija agencije</th><td class="na">Nije dostavljena</td><td class="na">Nije dostavljena</td><td>Dostavljena (garancija putovanja nije dokazana)</td><td>Dostavljena (garancija putovanja nije dokazana)</td><td class="na">Naknadno</td><td class="na">Naknadno</td></tr><tr><th scope="row">Kontakt 24 h</th><td class="na">Nije naveden</td><td class="na">Nije naveden</td><td>Emir Ljukovac, 061 216 375</td><td>Emir Ljukovac, 061 216 375</td><td>Emergency 24 h; Sandra Buzuk †</td><td>Emergency 24 h; Sandra Buzuk †</td></tr><tr><th scope="row">Plaćanje</th><td class="na">Nije navedeno</td><td class="na">Nije navedeno</td><td>Do 6 rata; sve 15 dana prije polaska</td><td>Do 6 rata; sve 15 dana prije polaska</td><td>50% avans, ostatak 30 dana prije</td><td>50% avans, ostatak 30 dana prije</td></tr><tr><th scope="row">Otkazivanje</th><td class="na">Nije navedeno</td><td class="na">Nije navedeno</td><td>Besplatno do 90 dana prije polaska</td><td>Besplatno do 60 dana prije polaska</td><td class="rk">Avio karte nepovratne; hotel besplatan storno do 7 dana</td><td class="rk">Hotel besplatan storno do 7 dana; autobus nije navedeno</td></tr><tr><th scope="row">Garancija cijene</th><td class="na">Nije navedena</td><td class="na">Nije navedena</td><td class="rk">Agencija: garantirana; ponuda: tarife se mogu mijenjati</td><td class="rk">Agencija: garantirana; ponuda: tarife se mogu mijenjati</td><td class="rk">Avio karte „trenutne iz sistema“, podložne promjenama (24 h †)</td><td>Ulaznice po objavljenim tarifama</td></tr><tr><th scope="row">Broj putnika</th><td>Min. 8 učenika</td><td>Min. 8 učenika</td><td>Min. 10 putnika (8 + 2)</td><td>Min. 10 putnika (8 + 2)</td><td>Min. 8 putnika</td><td>Min. 8 putnika</td></tr><tr><th scope="row">Ponuda važi do</th><td class="na">Nije navedeno</td><td class="na">Nije navedeno</td><td>30.11.2026.</td><td>30.11.2026.</td><td class="rk">15.11.2026.</td><td class="rk">15.11.2026.</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section id="broj-ucenika" class="alt">
+  <div class="wrap">
+    <h2>Šta ako se broj učenika promijeni</h2>
+    <div class="warn"><strong class="big">Svaki učenik koji ne putuje odmah i značajno utječe na cijenu po učeniku.</strong>
+      Sve cijene u ponudama izrađene su za 8 učenika i 2 nastavnika. Nastavnici putuju u svakom slučaju, a njihovi troškovi su uključeni u iznos po učeniku, pa se ti troškovi dijele na manji broj učenika. Fiksni troškovi (vozilo, transferi, vodiči, jednokrevetne sobe nastavnika) ne smanjuju se s brojem učenika.</div>
+    <ul>
+      <li><strong>Let’s Go</strong>: cijena izrađena za minimalno 8 učenika; cijena za manji broj nije data.</li>
+      <li><strong>Centrotrans</strong>: cijena je garantirana za grupu od 10 učesnika. Agencija piše da se za 7 ili 6 učenika cijena mijenja, jer to više nije grupa za koju je cijena formirana.</li>
+      <li><strong>Kompas</strong>: minimum je 8 putnika; pri manjem broju cijena se mijenja. Ako učenik odustane, gubi se nepovratna avio karta (800 KM), a hotel naplaćuje 100% u zadnjih 7 dana.</li>
+    </ul>
+    <p class="intro" style="margin-top:14px"><strong>Procjena škole:</strong> nijedna agencija nije dostavila cijenu za 7 ili 6 učenika. Donja granica pretpostavlja da se trošak smanjuje srazmjerno broju putnika, što je nerealno za vozilo i hotel. Gornja granica pretpostavlja da ukupna cijena grupe ostaje ista i da je dijeli manji broj učenika. Stvarna cijena bit će negdje između, a to agencije moraju potvrditi.</p>
+    <div class="tbl-wrap narrow"><table>
+      <thead><tr><th style="background:#000;color:#fff" scope="col">Opcija (uporediva cijena, doručak)</th><th scope="col" style="background:#FFCB29;color:#000">8 učenika (ponuda)</th><th scope="col" style="background:#FFCB29;color:#000">7 učenika (procjena)</th><th scope="col" style="background:#FFCB29;color:#000">6 učenika (procjena)</th></tr></thead>
+      <tbody><tr><th scope="row">1. Let’s Go, avion</th><td>2.581 KM</td><td>2.655 do 2.950 KM</td><td>2.753 do 3.442 KM</td></tr><tr><th scope="row">2. Let’s Go, autobus</th><td>2.481 KM</td><td>2.552 do 2.836 KM</td><td>2.647 do 3.308 KM</td></tr><tr><th scope="row">3. Centrotrans, avion</th><td>2.999 KM</td><td>3.085 do 3.427 KM</td><td>3.199 do 3.999 KM</td></tr><tr><th scope="row">4. Centrotrans, minibus</th><td>1.799 KM</td><td>1.850 do 2.056 KM</td><td>1.919 do 2.399 KM</td></tr><tr><th scope="row">5. Kompas, avion</th><td>2.272 KM</td><td>2.337 do 2.597 KM</td><td>2.424 do 3.030 KM</td></tr><tr><th scope="row">6. Kompas, autobus</th><td>1.750 KM</td><td>1.800 do 2.000 KM</td><td>1.867 do 2.333 KM</td></tr></tbody></table></div>
+    <p class="foot-note">Iznosi su po učeniku. Ovo je procjena škole, a ne cijena agencije. Zato Vas molimo da jasno označite hoće li Vaše dijete putovati.</p>
+  </div>
+</section>
+
+<section id="slijedi">
+  <div class="wrap">
+    <h2>Šta slijedi</h2>
+    <div class="deadline">Glasanje i povratne informacije: srijeda, 11.11.2026. do 16:00</div>
+    <ol class="steps">
+      <li><h3>Izbor agencije</h3><p>Roditelji glasaju, a odluku donosi škola na osnovu većine glasova. Cilj je da svi učenici putuju istom ponudom, kod jedne agencije. Čim glasanje završi, saopćit ćemo koja je agencija izabrana i putuju li svi učenici.</p></li>
+      <li><h3>Ugovor i avans</h3><p>Nakon izbora, ugovor i avans dogovaraju se što prije. Uplate idu direktno agenciji. Dinamika plaćanja zavisi od izabrane agencije: Centrotrans do 6 rata, a cijeli iznos 15 dana prije polaska; Kompas 50% avansa po potvrdi, ostatak 30 dana prije polaska; Let’s Go nije naveo uvjete plaćanja.</p></li>
+      <li><h3>Dokumentacija</h3><p>Sva dokumentacija dostavlja se školi na <strong>info@idss.ba</strong>, a škola je prosljeđuje izabranoj agenciji. Za sva putovanja potreban je važeći biometrijski pasoš (preporuka: važi najmanje 6 mjeseci nakon povratka) i pisana saglasnost roditelja za putovanje maloljetnika; ljekarsko uvjerenje po potrebi.</p></li>
+      <li><h3>ETIAS i ulazni uvjeti</h3><p>Ako ETIAS bude u primjeni na dan putovanja, Centrotrans navodi da podnosi zahtjeve i snosi naknade. Kod Kompasa i Let’s Go nije jasno navedeno ko to radi i plaća. Škola će to pisano provjeriti s izabranom agencijom.</p></li>
+      <li><h3>Konačna cijena</h3><p>Iznosi u ovom pregledu mogu se promijeniti nakon što izabrana agencija dostavi konačnu ponudu i ugovor. Škola će Vas obavijestiti o svakoj promjeni.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="glasanje" class="vote">
+  <div class="wrap">
+    <h2>Vaš glas, mišljenje i prijedlozi</h2>
+    <p class="intro">Molimo <strong>jedan odgovor po učeniku</strong>. Izaberite samo jednu ponudu: škola želi da svi učenici putuju istom ponudom. Kad kliknete na dugme, otvorit će se e-mail s popunjenim odgovorom koji šaljete školi na info@idss.ba.</p>
+    <div class="deadline">Rok: srijeda, 11.11.2026. do 16:00</div>
+
+    <form id="forma" novalidate>
+      <fieldset>
+        <legend>1. Za koju ponudu glasate?</legend>
+        <p class="hint">Izaberite jednu ponudu. Cijene su po učeniku, s doručkom, i uključuju troškove dva nastavnika u pratnji.</p>
+        <div class="choices">
+          <label class="choice" style="--ag:#FFCB29;--ink:#000000"><input type="radio" name="opcija" value="1" data-label="Opcija 1: Let’s Go, avion"><span class="choice-body"><span class="badge" aria-hidden="true">1</span><span class="choice-text"><strong>Let’s Go, avion</strong><span>uporediva cijena 2.581 KM po učeniku</span></span></span></label><label class="choice" style="--ag:#FFCB29;--ink:#000000"><input type="radio" name="opcija" value="2" data-label="Opcija 2: Let’s Go, autobus"><span class="choice-body"><span class="badge" aria-hidden="true">2</span><span class="choice-text"><strong>Let’s Go, autobus</strong><span>uporediva cijena 2.481 KM po učeniku</span></span></span></label><label class="choice" style="--ag:#08ABE6;--ink:#000000"><input type="radio" name="opcija" value="3" data-label="Opcija 3: Centrotrans, avion"><span class="choice-body"><span class="badge" aria-hidden="true">3</span><span class="choice-text"><strong>Centrotrans, avion</strong><span>uporediva cijena 2.999 KM po učeniku</span></span></span></label><label class="choice" style="--ag:#08ABE6;--ink:#000000"><input type="radio" name="opcija" value="4" data-label="Opcija 4: Centrotrans, minibus"><span class="choice-body"><span class="badge" aria-hidden="true">4</span><span class="choice-text"><strong>Centrotrans, minibus</strong><span>uporediva cijena 1.799 KM po učeniku</span></span></span></label><label class="choice" style="--ag:#035EA1;--ink:#FFFFFF"><input type="radio" name="opcija" value="5" data-label="Opcija 5: Kompas, avion"><span class="choice-body"><span class="badge" aria-hidden="true">5</span><span class="choice-text"><strong>Kompas, avion</strong><span>uporediva cijena 2.272 KM po učeniku</span></span></span></label><label class="choice" style="--ag:#035EA1;--ink:#FFFFFF"><input type="radio" name="opcija" value="6" data-label="Opcija 6: Kompas, autobus"><span class="choice-body"><span class="badge" aria-hidden="true">6</span><span class="choice-text"><strong>Kompas, autobus</strong><span>uporediva cijena 1.750 KM po učeniku</span></span></span></label>
+          <label class="choice other"><input type="radio" name="opcija" value="nijedna" data-label="Nijedna ponuda mi ne odgovara"><span class="choice-body"><span class="choice-text"><strong>Nijedna ponuda mi ne odgovara</strong><span>obrazložite u polju ispod</span></span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Putuje li Vaše dijete?</legend>
+        <p class="hint">Ovo je važno jer broj učenika utječe na cijenu (vidi odjeljak „Šta ako se broj učenika promijeni“).</p>
+        <div class="opts-inline">
+          <label class="chip"><input type="radio" name="putuje" value="Da, moje dijete putuje"><span>Da, putuje</span></label>
+          <label class="chip"><input type="radio" name="putuje" value="Ne, moje dijete ne putuje"><span>Ne, ne putuje</span></label>
+          <label class="chip"><input type="radio" name="putuje" value="Još nisam siguran/sigurna"><span>Još nisam siguran/sigurna</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Vaše mišljenje i prijedlozi</legend>
+        <div class="fields">
+          <div class="field full"><label for="misljenje">Šta mislite o ponudama? Šta biste promijenili ili dodali? Imate li pitanja za školu ili agencije?</label>
+          <textarea id="misljenje" placeholder="Napišite ovdje."></textarea></div>
+        </div>
+      </fieldset>
+
+      <div class="err" id="greska" role="alert"></div>
+      <div class="actions">
+        <button class="btn" type="submit">Pripremi e-mail za školu</button>
+        <p class="privacy">Obrazac ne traži ime Vas ni djeteta. Pošto se odgovor šalje e-mailom, škola vidi adresu s koje je poruka poslana.</p>
+      </div>
+    </form>
+
+    <div class="sent" id="poslano" aria-live="polite">
+      <h3>Vaš odgovor je spreman</h3>
+      <p>Otvorili smo e-mail program s popunjenim odgovorom. Provjerite tekst i pošaljite poruku na <strong>info@idss.ba</strong> najkasnije do srijede, 11.11.2026. u 16:00. Glas se računa tek kada škola primi Vašu poruku.</p>
+      <pre id="tekst"></pre>
+      <div class="actions">
+        <a class="btn" id="mailto" href="#">Otvori e-mail ponovo</a>
+        <button class="btn ghost" type="button" id="kopiraj">Kopiraj tekst</button>
+        <button class="btn ghost" type="button" id="izmijeni">Izmijeni odgovor</button>
+      </div>
+      <p style="margin-top:14px;font-size:15px">Ako se e-mail program nije otvorio, kopirajte tekst i pošaljite ga na info@idss.ba.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="bar" aria-hidden="true"><i style="background:#E8262C"></i><i style="background:#FFCB29"></i><i style="background:#08ABE6"></i><i style="background:#035EA1"></i><i style="background:#000"></i></div>
+<footer>
+  <div class="wrap">
+    <div><strong>Međunarodna njemačka škola Sarajevo</strong><br>Internationale Deutsche Schule Sarajevo (IDSS)<br>Buka 13, 71000 Sarajevo</div>
+    <div>Telefon: +387 33 560 520<br>E-mail: <a href="mailto:info@idss.ba">info@idss.ba</a><br><a href="https://www.idss.edu.ba">www.idss.edu.ba</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SKOLA = "info@idss.ba";
+  var form = document.getElementById("forma");
+  var greska = document.getElementById("greska");
+  var poslano = document.getElementById("poslano");
+  var tekst = document.getElementById("tekst");
+  var mailto = document.getElementById("mailto");
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function sastavi(){
+    var o = form.querySelector('input[name="opcija"]:checked');
+    var p = form.querySelector('input[name="putuje"]:checked');
+    var L = [];
+    L.push("Glasanje roditelja: ekskurzija Beč – Bratislava 2027. (5.–9. april 2027.)");
+    L.push("");
+    L.push("Izabrana ponuda: " + o.getAttribute("data-label"));
+    L.push("Putuje li dijete: " + p.value);
+    L.push("");
+    L.push("Mišljenje i prijedlozi:");
+    L.push(val("misljenje") || "(bez komentara)");
+    return L.join("\n");
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var poruke = [];
+    if(!form.querySelector('input[name="opcija"]:checked')) poruke.push("Izaberite ponudu za koju glasate.");
+    if(!form.querySelector('input[name="putuje"]:checked')) poruke.push("Označite putuje li Vaše dijete.");
+    if(poruke.length){
+      greska.textContent = poruke.join(" ");
+      greska.classList.add("show");
+      greska.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+    greska.classList.remove("show");
+    var body = sastavi();
+    tekst.textContent = body;
+    var subj = "Glasanje roditelja – ekskurzija Beč–Bratislava 2027.";
+    var href = "mailto:" + SKOLA + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+    mailto.setAttribute("href", href);
+    poslano.classList.add("show");
+    poslano.scrollIntoView({behavior:"smooth", block:"start"});
+    window.location.href = href;
+  });
+  document.getElementById("kopiraj").addEventListener("click", function(){
+    var b = this;
+    function ok(){ b.textContent = "Tekst je kopiran"; setTimeout(function(){ b.textContent = "Kopiraj tekst"; }, 2500); }
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents(tekst);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try{ document.execCommand("copy"); ok(); }catch(err){}
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(tekst.textContent).then(ok, fallback);
+    } else fallback();
+  });
+  document.getElementById("izmijeni").addEventListener("click", function(){
+    poslano.classList.remove("show");
+    document.getElementById("glasanje").scrollIntoView({behavior:"smooth"});
+  });
+})();
+</script>
+</body>
+</html>
